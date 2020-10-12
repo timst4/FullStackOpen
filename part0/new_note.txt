@@ -1,0 +1,37 @@
+note over browser
+user types in form field
+and clicks the submit button
+end note
+
+
+browser->server: HTML POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server
+data is sent in the body of the POST request
+server accesses the data from req.body
+server creates a new note object and adds it to the array notes
+end note
+
+server->browser: URL Redirect - Reloads https://studies.cs.helsinki.fi/exampleapp/notes
+browser->server: HTML GET https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: HTML Code
+browser->server: HTML GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: main.css
+browser->server: HTML GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON from server
+end note
+
+browser->server: HTML GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: data.json
+
+note over browser:
+browser executes event handler in js-code
+which renders notes to display
+end note
+
+browser->server: HTML GET https://studies.cs.helsinki.fi/exampleapp/favicon.ico
+server->browser: favicon.ico

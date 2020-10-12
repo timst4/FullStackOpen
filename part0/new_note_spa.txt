@@ -1,0 +1,38 @@
+title SPA New note
+
+note over browser:
+user types note and 
+clicks submit button
+end note
+
+note over browser:
+the browser runs spa.js
+which was retrieved from 
+the server previously.
+
+the browser executes an
+event handler upon the form
+submit. the event handler
+calls preventDefault() to
+prevent the GET request 
+(default form submit process).
+The event handler creates
+a new note, appends it to
+the notes list, rerenders
+the page, and then sends
+the new note to the server.
+end note
+
+browser->server: HTML GET https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+
+the post request
+contains the new note as 
+JSON-data containing
+the content and the 
+timestamp. The content-type
+header tells the server that
+the the included data is 
+in the JSON format.
+end note
